@@ -1,7 +1,11 @@
 package com.macrobios.pokedex;
 
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.DrawableWrapper;
 import android.os.Bundle;
 
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -17,6 +21,8 @@ import com.macrobios.pokedex.databinding.FragmentPokemonListBinding;
  * create an instance of this fragment.
  */
 public class DetailFragment extends Fragment {
+
+    private Bitmap bitmap;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -70,5 +76,7 @@ public class DetailFragment extends Fragment {
         return view;
     }
 
-
+    public void setPokemonImage(int imageID){
+        binding.pokemonDetailFragment.setImageDrawable(ContextCompat.getDrawable(getActivity(), imageID));
+    }
 }
