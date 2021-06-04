@@ -1,7 +1,9 @@
 package com.macrobios.pokedex;
 
+import android.content.Context;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
@@ -19,6 +21,13 @@ import java.util.ArrayList;
  * create an instance of this fragment.
  */
 public class PokemonListFragment extends Fragment {
+
+    OnPokemonSelectedListener mCallback;
+
+    public interface OnPokemonSelectedListener {
+        void onPokemonItemList(Pokemon pokemon);
+    }
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -89,8 +98,23 @@ public class PokemonListFragment extends Fragment {
 
         adapter.submitList(pokemonList);
 
+        adapter.setOnItemClickListener(pokemon -> {
+            mCallback.onPokemonItemList(pokemon);
+        });
 
         // Inflate the layout for this fragment
         return view;
+    }
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+
+        try {
+            mCallback = (OnPokemonSelectedListener) context;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(context.toString()
+                    + " must implemente OnPekemonSelectedListener");
+        }
     }
 }

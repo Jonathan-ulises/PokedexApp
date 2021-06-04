@@ -41,6 +41,17 @@ public class MainViewAdapter extends ListAdapter<Pokemon, MainViewAdapter.MainVi
         this.ctx = ctx;
     }
 
+
+    //EVENTO CLICK
+    private OnItemClickListener onItemClickListener;
+    public interface OnItemClickListener {
+        void onItemClick(Pokemon pokemon);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener){
+        this.onItemClickListener = onItemClickListener;
+    }
+
     @NonNull
     @Override
     public MainViewAdapter.MainViewViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -80,6 +91,11 @@ public class MainViewAdapter extends ListAdapter<Pokemon, MainViewAdapter.MainVi
                 case ELECTRIC:
                     binding.imgPokeType.setImageDrawable(ctx.getDrawable(R.drawable.electric));
             }
+
+            //Evento click
+            binding.getRoot().setOnClickListener(v -> {
+                onItemClickListener.onItemClick(pokemon);
+            });
 
             binding.executePendingBindings();
         }
