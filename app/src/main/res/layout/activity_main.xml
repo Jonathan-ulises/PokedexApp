@@ -9,7 +9,7 @@
     <fragment
         android:id="@+id/detail_fragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="250dp"
         android:name="com.macrobios.pokedex.DetailFragment"
         tools:layout="@layout/fragment_detail"
         android:layout_alignParentTop="true"/>

@@ -19,10 +19,9 @@ public class MainActivity extends AppCompatActivity implements PokemonListFragme
 
     @Override
     public void onPokemonItemList(Pokemon pokemon) {
-        Toast.makeText(this, pokemon.getName(), Toast.LENGTH_SHORT).show();
-
         DetailFragment fragment = (DetailFragment) getSupportFragmentManager().findFragmentById(R.id.detail_fragment);
 
         fragment.setPokemonImage(pokemon.getImageID());
+        fragment.playPokemonSound(pokemon.getSoundID());
     }
 }

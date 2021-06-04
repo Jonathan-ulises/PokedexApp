@@ -3,6 +3,7 @@ package com.macrobios.pokedex;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.DrawableWrapper;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 
 import androidx.core.content.ContextCompat;
@@ -78,5 +79,10 @@ public class DetailFragment extends Fragment {
 
     public void setPokemonImage(int imageID){
         binding.pokemonDetailFragment.setImageDrawable(ContextCompat.getDrawable(getActivity(), imageID));
+    }
+
+    public void playPokemonSound(int soundID) {
+        MediaPlayer mediaPlayer = MediaPlayer.create(getActivity(), soundID);
+        mediaPlayer.start();
     }
 }
