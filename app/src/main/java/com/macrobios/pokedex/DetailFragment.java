@@ -26,47 +26,27 @@ public class DetailFragment extends Fragment {
 
     private Bitmap bitmap;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private static final String POKEMON_IMAGE_URL = "pokemon_image_url";
+    private static final String POKEMON_SOUND_ID = "pokemon_sound_id";
+
 
     public DetailFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment DetailFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static DetailFragment newInstance(String param1, String param2) {
+
+    public static DetailFragment newInstance(String pokemonImageURL, int pokemonSoundID) {
         DetailFragment fragment = new DetailFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+        args.putString(POKEMON_IMAGE_URL, pokemonImageURL);
+        args.putInt(POKEMON_SOUND_ID, pokemonSoundID);
         fragment.setArguments(args);
         return fragment;
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
 
-    FragmentDetailBinding binding;
+    private FragmentDetailBinding binding;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -74,15 +54,23 @@ public class DetailFragment extends Fragment {
 
         binding = FragmentDetailBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
+
+        if(getArguments() != null){
+            String pokemonImageUrl = getArguments().getString(POKEMON_IMAGE_URL);
+            int pokemonSoundID = getArguments().getInt(POKEMON_SOUND_ID);
+
+            setPokemonImage(pokemonImageUrl);
+            playPokemonSound(pokemonSoundID);
+        }
         // Inflate the layout for this fragment
         return view;
     }
 
-    public void setPokemonImage(String imgageUrl){
+    private void setPokemonImage(String imgageUrl){
         Picasso.get().load(imgageUrl).into(binding.pokemonDetailFragment);
     }
 
-    public void playPokemonSound(int soundID) {
+    private void playPokemonSound(int soundID) {
         MediaPlayer mediaPlayer = MediaPlayer.create(getActivity(), soundID);
         mediaPlayer.start();
     }
