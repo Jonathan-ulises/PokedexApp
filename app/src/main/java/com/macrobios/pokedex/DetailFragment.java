@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 
 import com.macrobios.pokedex.databinding.FragmentDetailBinding;
 import com.macrobios.pokedex.databinding.FragmentPokemonListBinding;
+import com.squareup.picasso.Picasso;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -77,8 +78,8 @@ public class DetailFragment extends Fragment {
         return view;
     }
 
-    public void setPokemonImage(int imageID){
-        binding.pokemonDetailFragment.setImageDrawable(ContextCompat.getDrawable(getActivity(), imageID));
+    public void setPokemonImage(String imgageUrl){
+        Picasso.get().load(imgageUrl).into(binding.pokemonDetailFragment);
     }
 
     public void playPokemonSound(int soundID) {

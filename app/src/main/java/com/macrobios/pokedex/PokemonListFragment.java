@@ -78,18 +78,42 @@ public class PokemonListFragment extends Fragment {
         binding = FragmentPokemonListBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
 
+        Stats bulbasaurStats = new Stats("45", "49", "49", "45");
+        Stats inysaurStats = new Stats("60", "62", "63", "60");
+        Stats venuasaurStats = new Stats("80", "82", "83", "80");
+        Stats charmadnderStats = new Stats("39", "52", "43", "65");
+        Stats charmeleonStats = new Stats("58", "64", "58", "80");
+        Stats charizardStats = new Stats("78", "84", "78", "100");
+        Stats squirtleStats= new Stats("44", "48", "65", "43");
+        Stats wartortleStats = new Stats("59", "63", "80", "58");
+        Stats blastoiseStats = new Stats("79", "83", "100", "78");
+        Stats pikachuStats = new Stats("35", "55", "40", "90");
+        Stats raichuStats = new Stats("60", "90", "55", "110");
+
+
         ArrayList<Pokemon> pokemonList = new ArrayList<>();
-        pokemonList.add(new Pokemon("1", "Bulbasaur",   R.drawable.bulbasaur,   R.raw.bulbasaur,    Pokemon.Type.PLANT));
-        pokemonList.add(new Pokemon("2", "Ivysaur",     R.drawable.ivysaur,     R.raw.inysaur,      Pokemon.Type.PLANT));
-        pokemonList.add(new Pokemon("3", "Venuasaur",   R.drawable.venusaur,    R.raw.venusaur,     Pokemon.Type.PLANT));
-        pokemonList.add(new Pokemon("4", "Charmander",  R.drawable.charmander,  R.raw.charmander,   Pokemon.Type.FIRE));
-        pokemonList.add(new Pokemon("6", "Charizard",   R.drawable.charizard,   R.raw.charizard,    Pokemon.Type.FIRE));
-        pokemonList.add(new Pokemon("7", "Squirtle",    R.drawable.squirtle,    R.raw.squirtle,     Pokemon.Type.WATER));
-        pokemonList.add(new Pokemon("5", "Charmeleon",  R.drawable.charmeleon,  R.raw.charmeleon,   Pokemon.Type.FIRE));
-        pokemonList.add(new Pokemon("8", "Wartortle",   R.drawable.wartortle,   R.raw.wartotle,    Pokemon.Type.WATER));
-        pokemonList.add(new Pokemon("9", "Blastoise",   R.drawable.blastoise,   R.raw.blastoise,    Pokemon.Type.WATER));
-        pokemonList.add(new Pokemon("25", "Pikachu",    R.drawable.pikachu,     R.raw.pikachu,      Pokemon.Type.ELECTRIC));
-        pokemonList.add(new Pokemon("26", "Raichu",     R.drawable.raichu,      R.raw.raichu,       Pokemon.Type.ELECTRIC));
+        pokemonList.add(new Pokemon("1", "Bulbasaur",
+                "https://static.wikia.nocookie.net/espokemon/images/4/43/Bulbasaur.png/revision/latest?cb=20170120032346", R.raw.bulbasaur, Pokemon.Type.PLANT, bulbasaurStats));
+        pokemonList.add(new Pokemon("2", "Ivysaur",
+                "https://static.wikia.nocookie.net/espokemon/images/8/86/Ivysaur.png/revision/latest?cb=20140207202404", R.raw.inysaur, Pokemon.Type.PLANT, inysaurStats));
+        pokemonList.add(new Pokemon("3", "Venuasaur",
+                "https://static.wikia.nocookie.net/espokemon/images/b/be/Venusaur.png/revision/latest?cb=20160309230456", R.raw.venusaur, Pokemon.Type.PLANT, venuasaurStats));
+        pokemonList.add(new Pokemon("4", "Charmander",
+                "https://static.wikia.nocookie.net/espokemon/images/5/56/Charmander.png/revision/latest?cb=20140207202456", R.raw.charmander, Pokemon.Type.FIRE, charmadnderStats));
+        pokemonList.add(new Pokemon("6", "Charizard",
+                "https://static.wikia.nocookie.net/espokemon/images/9/95/Charizard.png/revision/latest?cb=20180325003352", R.raw.charizard, Pokemon.Type.FIRE, charizardStats));
+        pokemonList.add(new Pokemon("7", "Squirtle",
+                "https://static.wikia.nocookie.net/espokemon/images/e/e3/Squirtle.png/revision/latest?cb=20160309230820", R.raw.squirtle, Pokemon.Type.WATER, squirtleStats));
+        pokemonList.add(new Pokemon("5", "Charmeleon",
+                "https://static.wikia.nocookie.net/espokemon/images/f/fb/Charmeleon.png/revision/latest/scale-to-width-down/260?cb=20140207202536", R.raw.charmeleon, Pokemon.Type.FIRE, charmeleonStats));
+        pokemonList.add(new Pokemon("8", "Wartortle",
+                "https://static.wikia.nocookie.net/espokemon/images/d/d7/Wartortle.png/revision/latest?cb=20140207202657", R.raw.wartotle, Pokemon.Type.WATER, wartortleStats));
+        pokemonList.add(new Pokemon("9", "Blastoise",
+                "https://static.wikia.nocookie.net/espokemon/images/4/41/Blastoise.png/revision/latest?cb=20140207202720", R.raw.blastoise, Pokemon.Type.WATER, blastoiseStats));
+        pokemonList.add(new Pokemon("25", "Pikachu",
+                "https://static.wikia.nocookie.net/espokemon/images/7/77/Pikachu.png/revision/latest?cb=20150621181250", R.raw.pikachu, Pokemon.Type.ELECTRIC, pikachuStats));
+        pokemonList.add(new Pokemon("26", "Raichu",
+                "https://static.wikia.nocookie.net/espokemon/images/3/34/Raichu.png/revision/latest/scale-to-width-down/1000?cb=20160815220038", R.raw.raichu, Pokemon.Type.ELECTRIC, raichuStats));
 
         binding.rclPokemon.setLayoutManager(new LinearLayoutManager(getActivity()));
         MainViewAdapter adapter = new MainViewAdapter(getActivity());

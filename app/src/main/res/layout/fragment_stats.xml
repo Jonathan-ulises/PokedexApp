@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".StatsFragment"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:layout_weight="1"
+                android:text="HP"
+                android:fontFamily="sans-serif-light"
+                android:textStyle="bold"
+                android:textSize="24sp"
+                android:textColor="@color/white"
+                android:background="#fb5c62" />
+
+            <TextView
+                android:id="@+id/txtHPStats"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:layout_weight="1"
+                tools:text="000"
+                android:fontFamily="sans-serif-light"
+                android:textStyle="bold"
+                android:textSize="24sp"
+                android:textColor="@color/white"
+                android:gravity="end"
+                android:background="#fb5c62" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:layout_weight="1"
+                android:text="Attack"
+                android:fontFamily="sans-serif-light"
+                android:textStyle="bold"
+                android:textSize="24sp"
+                android:textColor="@color/white"
+                android:background="#e97e27" />
+
+            <TextView
+                android:id="@+id/txtAtkStats"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:layout_weight="1"
+                tools:text="000"
+                android:fontFamily="sans-serif-light"
+                android:textStyle="bold"
+                android:textSize="24sp"
+                android:textColor="@color/white"
+                android:gravity="end"
+                android:background="#e97e27" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:layout_weight="1"
+                android:text="Defense"
+                android:fontFamily="sans-serif-light"
+                android:textStyle="bold"
+                android:textSize="24sp"
+                android:textColor="@color/black"
+                android:background="#fae078" />
+
+            <TextView
+                android:id="@+id/txtDefStats"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:layout_weight="1"
+                tools:text="000"
+                android:fontFamily="sans-serif-light"
+                android:textStyle="bold"
+                android:textSize="24sp"
+                android:textColor="@color/black"
+                android:gravity="end"
+                android:background="#fae078" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:layout_weight="1"
+                android:text="Speed"
+                android:fontFamily="sans-serif-light"
+                android:textStyle="bold"
+                android:textSize="24sp"
+                android:textColor="@color/white"
+                android:background="#fa92b2" />
+
+            <TextView
+                android:id="@+id/txtSpdStats"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:layout_weight="1"
+                tools:text="000"
+                android:fontFamily="sans-serif-light"
+                android:textStyle="bold"
+                android:textSize="24sp"
+                android:textColor="@color/white"
+                android:gravity="end"
+                android:background="#fa92b2" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

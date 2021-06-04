@@ -6,20 +6,22 @@ public class Pokemon {
 
     private String id;
     private String name;
-    private int imageID;
+    private String imageUrl;
     private int soundID;
     private Type type;
+    private Stats stats;
 
     public enum Type{
         FIRE, WATER, PLANT, ELECTRIC
     }
 
-    public Pokemon(String id, String name, int imageID, int soundID, Type type) {
+    public Pokemon(String id, String name, String imageUrl, int soundID, Type type, Stats stats) {
         this.id = id;
         this.name = name;
-        this.imageID = imageID;
+        this.imageUrl = imageUrl;
         this.soundID = soundID;
         this.type = type;
+        this.stats = stats;
     }
 
     public String getId() {
@@ -34,12 +36,16 @@ public class Pokemon {
         return type;
     }
 
-    public int getImageID() {
-        return imageID;
+    public String getImageUrl() {
+        return imageUrl;
     }
 
     public int getSoundID() {
         return soundID;
+    }
+
+    public Stats getStats() {
+        return stats;
     }
 
     @Override
@@ -47,15 +53,16 @@ public class Pokemon {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Pokemon pokemon = (Pokemon) o;
-        return imageID == pokemon.imageID &&
-                soundID == pokemon.soundID &&
+        return soundID == pokemon.soundID &&
                 id.equals(pokemon.id) &&
                 name.equals(pokemon.name) &&
-                type == pokemon.type;
+                imageUrl.equals(pokemon.imageUrl) &&
+                type == pokemon.type &&
+                stats.equals(pokemon.stats);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, imageID, soundID, type);
+        return Objects.hash(id, name, imageUrl, soundID, type, stats);
     }
 }
