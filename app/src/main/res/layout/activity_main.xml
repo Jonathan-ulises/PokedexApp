@@ -7,11 +7,20 @@
     tools:context=".MainActivity" >
 
     <fragment
+        android:id="@+id/detail_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:name="com.macrobios.pokedex.DetailFragment"
+        tools:layout="@layout/fragment_detail"
+        android:layout_alignParentTop="true"/>
+
+    <fragment
         android:id="@+id/pokemon_list_fragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:name="com.macrobios.pokedex.PokemonListFragment"
-        tools:layout="@layout/fragment_pokemon_list"/>
+        tools:layout="@layout/fragment_pokemon_list"
+        android:layout_below="@+id/detail_fragment"/>
 
 
 </RelativeLayout>
